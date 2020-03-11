@@ -6,6 +6,8 @@ from Utils.processFrame import processFrame
 # declare video file
 cap = cv2.VideoCapture('video.mp4')
 
+frameCount = 0
+
 # check is video can be opened
 if(cap.isOpened()== False):
     print("Error oprning video stream or file")
@@ -15,6 +17,8 @@ while(cap.isOpened()):
     ret, frame = cap.read()
     if ret == True:
 
+        frameCount += 1
+        print(frameCount)
         # process frame using Utils/processFrame
         frame = processFrame(frame)
 
@@ -30,5 +34,6 @@ while(cap.isOpened()):
         break
 
 # destroy window
+print(frameCount)
 cap.release()
 cv2.destroyAllWIndows()

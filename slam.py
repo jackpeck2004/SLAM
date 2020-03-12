@@ -7,6 +7,8 @@ from Utils.processFrame import processFrame
 cap = cv2.VideoCapture('video.mp4')
 
 frameCount = 0
+frames = []
+corners = []
 
 # check is video can be opened
 if(cap.isOpened()== False):
@@ -18,10 +20,12 @@ while(cap.isOpened()):
     if ret == True:
 
         frameCount += 1
-        print(frameCount)
+        frames.append(frame)
+        # print(frameCount)
         # process frame using Utils/processFrame
-        frame = processFrame(frame)
+        frame, cor = processFrame(frame)
 
+        corners.append(cor)
         # Display Frame
         cv2.imshow('Slam', frame)
 
@@ -34,6 +38,6 @@ while(cap.isOpened()):
         break
 
 # destroy window
-print(frameCount)
+print(corners)
 cap.release()
 cv2.destroyAllWIndows()

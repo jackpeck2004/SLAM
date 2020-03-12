@@ -15,7 +15,17 @@ def processFrame(frame):
     # print(len(cont))
 
     # draw contours
-    cv2.drawContours(frame, cont, -1, (0, 255, 0), 3)
+    # cv2.drawContours(frame, cont, -1, (0, 255, 0), 3)
+    # print(cont)
+
+    # draw corners
+    corners = cv2.goodFeaturesToTrack(gFrame,25,0.01,10)
+
+    corners = np.int0(corners)
+    
+    for i in corners:
+        x,y = i.ravel()
+        cv2.circle(frame,(x,y),3,255,-1)
     
     # apply gaussian blur
     # bluredFrame = cv2.GaussianBlur(frame, (7,7),1)

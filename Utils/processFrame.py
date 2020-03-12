@@ -20,7 +20,7 @@ def processFrame(frame):
     # print(len(cont))
 
     # draw contours
-    # cv2.drawContours(frame2, cont, -1, (0, 255, 0), 3)
+    #cv2.drawContours(frame2, cont, -1, (0, 255, 0), 3)
     # print(cont)
 
     # draw corners

@@ -1,3 +1,6 @@
 env
 *~
 '#*#'
+Utils/__pycache__
+Utlis/*~
+Utils/'#*#'

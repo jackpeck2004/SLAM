@@ -2,13 +2,14 @@
 import cv2
 import numpy as np
 from Utils.processFrame import processFrame
+# from Utils.plotGraph import plotGraph
 
 # declare video file
-cap = cv2.VideoCapture('video.mp4')
+# cap = cv2.VideoCapture('video.mp4')
+cap = cv2.VideoCapture('newfile.mp4')
 
 frameCount = 0
 frames = []
-corners = []
 
 # check is video can be opened
 if(cap.isOpened()== False):
@@ -20,12 +21,10 @@ while(cap.isOpened()):
     if ret == True:
 
         frameCount += 1
-        frames.append(frame)
-        # print(frameCount)
-        # process frame using Utils/processFrame
-        frame, cor = processFrame(frame)
 
-        corners.append(cor)
+        # process frame using Utils/processFrame
+        frame = processFrame(frame)
+
         # Display Frame
         cv2.imshow('Slam', frame)
 
@@ -38,6 +37,7 @@ while(cap.isOpened()):
         break
 
 # destroy window
-print(corners)
 cap.release()
-cv2.destroyAllWIndows()
+
+# cv2.destroyAllWIndows()
+

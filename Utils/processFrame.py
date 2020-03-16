@@ -13,12 +13,11 @@ def processFrame(frame):
 
     matches = fe.extract(frame)
 
-    if matches is not None:
-        for pt1, pt2 in matches:
-            u1, v1 = map(lambda x: int(round(x)), pt1.pt)
-            u2, v2 = map(lambda x: int(round(x)), pt2.pt)
-            cv2.circle(frame, (u1,v1), radius=3, color=(0,255,0))
-            cv2.line(frame, (u1, v1), (u2,v2), color=(255,0,0))
+    for pt1, pt2 in matches:
+        u1, v1 = map(lambda x: int(round(x)), pt1)
+        u2, v2 = map(lambda x: int(round(x)), pt2)
+        cv2.circle(frame, (u1,v1), radius=3, color=(0,255,0))
+        cv2.line(frame, (u1, v1), (u2,v2), color=(255,0,0))
 
     # frame = cv2.drawKeypoints(frame, kp, None, color=(0, 255, 0), flags=0)
     

@@ -6,7 +6,7 @@ from Utils.processFrame import processFrame
 
 # declare video file
 # cap = cv2.VideoCapture('video.mp4')
-cap = cv2.VideoCapture('newfile.mp4')
+cap = cv2.VideoCapture('video2.mp4')
 
 frameCount = 0
 frames = []
@@ -23,7 +23,7 @@ while(cap.isOpened()):
         frameCount += 1
 
         # process frame using Utils/processFrame
-        frame = processFrame(frame)
+        # frame = processFrame(frame)
 
         # Display Frame
         cv2.imshow('Slam', frame)

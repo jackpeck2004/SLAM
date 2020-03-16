@@ -2,7 +2,7 @@
 import cv2
 import numpy as np
 from Utils.processFrame import processFrame
-# from Utils.plotGraph import plotGraph
+from Utils.plotGraph import plotGraph
 
 # declare video file
 # cap = cv2.VideoCapture('video.mp4')
@@ -10,6 +10,8 @@ cap = cv2.VideoCapture('video2.mp4')
 
 frameCount = 0
 frames = []
+ukps = []
+vkps = []
 
 # check is video can be opened
 if(cap.isOpened()== False):
@@ -23,7 +25,10 @@ while(cap.isOpened()):
         frameCount += 1
 
         # process frame using Utils/processFrame
-        # frame = processFrame(frame)
+        frame, ukps1, vkps1 = processFrame(frame)
+
+        ukps.append(ukps1)
+        vkps.append(vkps1)
 
         # Display Frame
         cv2.imshow('Slam', frame)
@@ -41,3 +46,5 @@ cap.release()
 
 # cv2.destroyAllWIndows()
 
+
+plotGraph(ukps, vkps, frameCount)

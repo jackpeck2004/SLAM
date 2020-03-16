@@ -1,13 +1,19 @@
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 
-fig = plt.figure()
-ax = fig.add_subplot(111, projection='3d')
+def plotGraph(xArr, yArr, frameCount):
+    fig = plt.figure()
+    ax = fig.add_subplot(111, projection='3d')
 
-p = [1,2,3,4,5,6]
+    frameCounter = []
+    
+    for i in range(frameCount):
+        frameCounter.append(i)
 
-for i in p:
-    ax.scatter(i, i, i)
+    for x,y,z in zip(xArr, yArr, frameCounter):
+        ax.scatter(x, z, y)
 
-plt.show()
+    plt.show()
+
+    # print(frameCounter)
 

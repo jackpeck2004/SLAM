@@ -10,8 +10,8 @@ cap = cv2.VideoCapture('video2.mp4')
 
 frameCount = 0
 frames = []
-ukps = []
-vkps = []
+# ukps = []
+# vkps = []
 
 # check is video can be opened
 if(cap.isOpened()== False):

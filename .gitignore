@@ -2,5 +2,8 @@ env
 *~
 '#*#'
 Utils/__pycache__
+Utils/__pycache__/*
 Utlis/*~
 Utils/'#*#'
+*.mp4
+*.jpg

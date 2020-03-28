@@ -1,5 +1,6 @@
 import cv2
 import numpy as np
+import time
 
 from skimage.measure import ransac
 from skimage.transform import FundamentalMatrixTransform
@@ -31,8 +32,8 @@ class Extractor(object):
                     kp1 = kps[m.queryIdx].pt
                     kp2 = self.last['kps'][m.trainIdx].pt
                     ret.append((kp1, kp2))
-                    
-            
+
+
         # matches = zip([kps[m.queryIdx] for m in matches], [self.last['kps'][m.trainIdx] for m in matches])
         if len(ret) > 0:
             ret = np.array(ret)
@@ -46,4 +47,6 @@ class Extractor(object):
 
         # return
         self.last = {'kps': kps, 'des': des}
-        return ret
+        # print(ret)
+        # time.sleep(1)
+        # return ret

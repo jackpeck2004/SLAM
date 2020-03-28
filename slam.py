@@ -1,26 +1,25 @@
 #!/usr/bin/env python3
+
 import cv2
-import numpy as np
+# import numpy as np
+
 from Utils.processFrame import processFrame
-from Utils.plotGraph import plotGraph
+# from Utils.plotGraph import plotGraph
 
 # declare video file
 # cap = cv2.VideoCapture('video.mp4')
 cap = cv2.VideoCapture('video2.mp4')
 
 frameCount = 0
-frames = []
-# ukps = []
-# vkps = []
 
 # check is video can be opened
-if(cap.isOpened()== False):
-    print("Error oprning video stream or file")
+if(not cap.isOpened()):
+    print("Error opening video stream or file")
 
 # while video is on read
 while(cap.isOpened()):
     ret, frame = cap.read()
-    if ret == True:
+    if ret:
 
         frameCount += 1
 

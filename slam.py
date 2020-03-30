@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 import cv2
-# import numpy as np
+import numpy as np
 
 from Utils.processFrame import processFrame
 # from Utils.plotGraph import plotGraph
@@ -13,11 +13,11 @@ cap = cv2.VideoCapture('video2.mp4')
 frameCount = 0
 
 # check is video can be opened
-if(not cap.isOpened()):
+if (not cap.isOpened()):
     print("Error opening video stream or file")
 
 # while video is on read
-while(cap.isOpened()):
+while (cap.isOpened()):
     ret, frame = cap.read()
     if ret:
 

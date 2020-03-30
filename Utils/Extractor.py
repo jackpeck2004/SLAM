@@ -45,8 +45,7 @@ class Extractor(object):
 
             ret = ret[inliers]
 
-        # return
         self.last = {'kps': kps, 'des': des}
         # print(ret)
         # time.sleep(1)
-        # return ret
+        return ret
